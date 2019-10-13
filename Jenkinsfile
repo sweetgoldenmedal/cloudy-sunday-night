@@ -6,11 +6,13 @@ pipeline {
       steps {
 				sh 'hostname'
 				sh 'ls code.py'
-        sh 'echo "Hello World"'
-        sh '''
+				sh 'sudo cp code.py /mnt/code/py'
+        //sh 'echo "Hello World"'
+        /*sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
+				*/
       }
     }
   }
