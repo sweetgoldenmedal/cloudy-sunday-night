@@ -12,7 +12,7 @@ cpx.red_led= False
 
 while True:
     for i in range(10):
-        cpx.pixels[i] = [1,0,0]
+        cpx.pixels[i] = [0,0,1]
         #cpx.pixels[(i-9)%10] = (0,0,0)
         #cpx.pixels[(i-6)%10] = (20,20,20)
         #cpx.pixels[(i-3)%10] = (0,0,20)
