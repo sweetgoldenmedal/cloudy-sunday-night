@@ -17,7 +17,7 @@ while True:
         cpx.pixels[(i + 1) % 10] = (20, 0, 0)
         time.sleep(0.1)
 
-    for i in range[5]:
+    for i in range(5):
         if (i % 2) == 0:
             cpx.pixels.fill((50, 0, 0))
         else:
