@@ -22,5 +22,6 @@ while True:
             cpx.pixels.fill((50, 0, 0))
         else:
             cpx.pixels.fill((0, 0, 0))
+        time.sleep(0.1)
 
     cpx.pixels.fill((0, 0, 0))
