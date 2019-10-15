@@ -11,17 +11,19 @@ import time
 cpx.red_led= False
 
 while True:
-    for i in range(10):
-      if i % 2 == 0:
-        cpx.pixels[i] = [0,1,0]
+  for i in range(10):
+    if i % 2 == 0:
+      cpx.pixels[i] = [0,1,0]
+    if i % 1 == 0:
+      cpx.pixels[i] = [1,0,0]
+    time.sleep(1)
         #cpx.pixels[(i-9)%10] = (0,0,0)
         #cpx.pixels[(i-6)%10] = (20,20,20)
         #cpx.pixels[(i-3)%10] = (0,0,20)
         #cpx.pixels[i] = (20,0,0)
         #cpx.pixels[(i+1)%10] = (20,0,0)
         #time.sleep(.1)
-        time.sleep(1)
 
-    for i in range(10):
-        cpx.pixels[i] = [0,0,0]
-        time.sleep(1)
+    #for i in range(10):
+    #    cpx.pixels[i] = [0,0,0]
+    #    time.sleep(1)
