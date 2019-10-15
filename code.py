@@ -14,7 +14,7 @@ while True:
   for i in range(10):
     if i % 2 == 0:
       cpx.pixels[i] = [0,1,0]
-    else i % 1 == 0:
+    else:
       cpx.pixels[i] = [1,0,0]
     time.sleep(1)
         #cpx.pixels[(i-9)%10] = (0,0,0)
