@@ -1,14 +1,12 @@
 # The cpx will execute the contents of this file
 
+# see https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/neopixels
+# for additional cpx functionality 
+
 from adafruit_circuitplayground.express import cpx
 import time
-#while True:
-#    cpx.red_led = True
-#    time.sleep(.01)
-#    cpx.red_led = False
-#    time.sleep(.01)
 
-cpx.red_led = False
+cpx.red_led = True 
 
 while True:
   for i in range(10):
