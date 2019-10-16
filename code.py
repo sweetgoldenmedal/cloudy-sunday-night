@@ -57,9 +57,9 @@ while True:
             cpx.pixels.fill((50, 0, 0))
         else:
             cpx.pixels.fill((0, 0, 0))
-        cpx.play_tone(1100, .075)
+        # cpx.play_tone(1100, .075)
         # cpx.play_tone(2200, .5)
         # cpx.play_tone(300, .5)
-        # time.sleep(0.075)
+        time.sleep(0.075)
 
     cpx.pixels.fill((0, 0, 0))
