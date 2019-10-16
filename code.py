@@ -9,19 +9,54 @@ import time
 cpx.red_led = True
 
 while True:
-    for i in range(10):
-        cpx.pixels[(i - 9) % 10] = (0, 0, 0)
-        cpx.pixels[(i - 6) % 10] = (20, 20, 20)
-        cpx.pixels[(i - 3) % 10] = (0, 0, 20)
-        cpx.pixels[i] = (20, 0, 0)
-        cpx.pixels[(i + 1) % 10] = (20, 0, 0)
-        time.sleep(0.1)
+    cpx.pixels[4] = (0, 25, 5)
+    cpx.pixels[5] = (0, 25, 5)
+    time.sleep(0.5)
 
-    for i in range(5):
+    cpx.pixels[3] = (0, 25, 5)
+    cpx.pixels[6] = (0, 25, 5)
+    time.sleep(0.5)
+
+    # cpx.pixels[4] = (247, 255, 0)
+    # cpx.pixels[5] = (247, 255, 0)
+    # cpx.pixels[3] = (247, 255, 0)
+    # cpx.pixels[6] = (247, 255, 0)
+    cpx.pixels[2] = (24, 25, 0)
+    cpx.pixels[7] = (24, 25, 0)
+    time.sleep(0.5)
+
+    # cpx.pixels[4] = (247, 255, 0)
+    # cpx.pixels[5] = (247, 255, 0)
+    # cpx.pixels[3] = (247, 255, 0)
+    # cpx.pixels[6] = (247, 255, 0)
+    cpx.pixels[2] = (24, 25, 0)
+    cpx.pixels[7] = (24, 25, 0)
+    cpx.pixels[1] = (24, 25, 0)
+    cpx.pixels[8] = (24, 25, 0)
+    time.sleep(0.5)
+
+    for i in range(4):
+        if (i % 2) == 0:
+            cpx.pixels[0] = (50, 0, 0)
+            cpx.pixels[9] = (50, 0, 0)
+        else:
+            cpx.pixels[0] = (0, 0, 0)
+            cpx.pixels[9] = (0, 0, 0)
+        time.sleep(0.4)
+
+    # for i in range(10):
+    #     cpx.pixels[(i - 9) % 10] = (0, 0, 0)
+    #     cpx.pixels[(i - 6) % 10] = (20, 20, 20)
+    #     cpx.pixels[(i - 3) % 10] = (0, 0, 20)
+    #     cpx.pixels[i] = (20, 0, 0)
+    #     cpx.pixels[(i + 1) % 10] = (20, 0, 0)
+    #     time.sleep(0.1)
+
+    for i in range(100):
         if (i % 2) == 0:
             cpx.pixels.fill((50, 0, 0))
         else:
             cpx.pixels.fill((0, 0, 0))
-        time.sleep(0.5)
+        time.sleep(0.1)
 
     cpx.pixels.fill((0, 0, 0))
