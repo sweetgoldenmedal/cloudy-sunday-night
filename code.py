@@ -35,14 +35,14 @@ while True:
     cpx.pixels[8] = (24, 25, 0)
     time.sleep(1)
 
-    for i in range(6):
+    for i in range(10):
         if (i % 2) == 0:
             cpx.pixels[0] = (50, 0, 0)
             cpx.pixels[9] = (50, 0, 0)
         else:
             cpx.pixels[0] = (0, 0, 0)
             cpx.pixels[9] = (0, 0, 0)
-        time.sleep(0.75)
+        time.sleep(0.4)
 
     # for i in range(10):
     #     cpx.pixels[(i - 9) % 10] = (0, 0, 0)
