@@ -6,7 +6,7 @@
 from adafruit_circuitplayground.express import cpx
 import time
 
-cpx.red_led = True
+cpx.red_led = False
 
 while True:
     cpx.pixels[4] = (0, 25, 5)
