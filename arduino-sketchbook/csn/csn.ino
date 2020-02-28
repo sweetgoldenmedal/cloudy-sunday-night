@@ -22,12 +22,23 @@
 #define HOLD A1   /* Hold input pin */
 #define RESUME A2 /* Resume input pin */
 
-#define STEP_DELAY 10 /* default step delay */
-#define PHASE_DELAY 1000 /* default step delay */
+#define STEP_DELAY 2 /* default step delay */
 #define QUARTER_TURN_STEP_COUNT 50
 
+// Assume all panels are closed at start
+int XSTATE = XCLOSE
+int YSTATE = YCLOSE
+int ZSTATE = ZCLOSE
+int ASTATE = ACLOSE
+
 int Count = 0; /* Counter to count number of steps made */
-boolean Direction = LOW; /* Rotational direction of stepper motors */
+boolean DIRECTION = LOW; /* Rotational direction of stepper motors */
+boolean OPEN_DIRECTION = LOW;
+boolean CLOSE_DIRECTION = HIGH;
+int CHANNEL = 0 // which channel is currently active
+
+int incomingByte = 0; // for incoming serial data
+
 
 /* The setup routine runs once when you press reset: */
 void setup() 
@@ -60,33 +71,82 @@ void setup()
   Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
 }
 
-
-
-//String incomingString = "unset"; // for incoming serial data
-int incomingByte = 0; // for incoming serial data
-
-/*
-void setup() {
-  Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
-}
-*/
-
 void loop() {
   if (Serial.available() > 0) {
     incomingByte = Serial.read();
 
+    switch(incomingByte) {
 
-    if (incomingByte == '1') {
-      // do things 
-      for (int i = 1; i <= QUARTER_TURN_STEP_COUNT; i++) {
-        digitalWrite(X_STEP, HIGH);
-        delay(STEP_DELAY);
-        digitalWrite(X_STEP, LOW);
-        delay(STEP_DELAY);
-      }
+      case '1': // open X
+        // set the rotation direction
+      	digitalWrite(X_DIR, OPEN_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = X_STEP
+      break;
+
+      case '2': // close X
+        // set the rotation direction
+      	digitalWrite(X_DIR, CLOSE_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = X_STEP
+      break;
+
+      case '3': // open Y
+        // set the rotation direction
+      	digitalWrite(Y_DIR, OPEN_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = Y_STEP
+      break;
+
+      case '4': // close Y
+        // set the rotation direction
+      	digitalWrite(Y_DIR, CLOSE_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = Y_STEP
+      break;
+
+      case '5': // open Z
+        // set the rotation direction
+      	digitalWrite(Z_DIR, OPEN_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = Z_STEP
+      break;
+
+      case '6': // close Z
+        // set the rotation direction
+      	digitalWrite(Z_DIR, CLOSE_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = Z_STEP
+      break;
+
+      case '7': // open A
+        // set the rotation direction
+      	digitalWrite(A_DIR, OPEN_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = A_STEP
+      break;
+
+      case '8': // close A
+        // set the rotation direction
+      	digitalWrite(A_DIR, CLOSE_DIRECTION) 
+        // define the stepper that will be activated below
+        STEP_CHANNEL = A_STEP
+      break;
+
+      default:
+        // write a  negative 1 out to denote an unmatched byte signal
+        Serial.write(-1);
     }
 
-    //Serial.print(incomingByte, DEC);
+    // echo out the received byte for logging/debugging
     Serial.write(incomingByte);
+
+    for (int i = 1; i <= QUARTER_TURN_STEP_COUNT; i++) {
+      digitalWrite(STEP_CHANNEL, HIGH);
+      delay(STEP_DELAY);
+      digitalWrite(STEP_CHANNEL, LOW);
+      delay(STEP_DELAY);
+    }
   }
 }
+
