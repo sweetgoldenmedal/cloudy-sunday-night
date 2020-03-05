@@ -11,8 +11,7 @@ https://github.com/sweetgoldenmedal/cloudy-sunday-night/issues
  * (resolution point 640,480 resides in F7)
 
 
-|    | A  | B  | C  | D  | E  | F  |
-|    | -  | -  | -  | -  | -  | -  |
+| fword   | A  | B  | C  | D  | E  | F  |
 | 1  | A1 | B1 | C1 | D1 | E1 | F1 |
 | 2  | A2 | B2 | C2 | D2 | E2 | F2 |
 | 3  | A3 | B3 | C3 | D3 | E3 | F3 |
