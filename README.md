@@ -5,13 +5,14 @@
 https://github.com/sweetgoldenmedal/cloudy-sunday-night/issues
 
  ## rough grid sketch
-(640 tall, 1 thru 7)
-(480 wide, A thru F)
-(resolution point 1,1 resides in A1)
-(resolution point 640,480 resides in F7)
+ * (640 tall, 1 thru 7)
+ * (480 wide, A thru F)
+ * (resolution point 1,1 resides in A1)
+ * (resolution point 640,480 resides in F7)
 
 
 |    | A  | B  | C  | D  | E  | F  |
+|    | -  | -  | -  | -  | -  | -  |
 | 1  | A1 | B1 | C1 | D1 | E1 | F1 |
 | 2  | A2 | B2 | C2 | D2 | E2 | F2 |
 | 3  | A3 | B3 | C3 | D3 | E3 | F3 |
